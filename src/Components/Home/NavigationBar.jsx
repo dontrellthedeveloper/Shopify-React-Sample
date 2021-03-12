@@ -5,6 +5,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import {Avatar} from "@material-ui/core";
+import '../../Styles/NavigationBar.css';
 
 
 export const NavigationBar = () => {
@@ -13,33 +14,33 @@ export const NavigationBar = () => {
           <div className='nav-top'>
               <div className='nav-top-left'>
                   <LanguageIcon/>
-                  <h4>English / Spanish</h4>
+                  <h4 className='nav-tleft-link'>English / Spanish</h4>
               </div>
               <div className='nav-top-right'>
-                  <HelpOutlineIcon/>
-                  <h4>Customer Support</h4>
+                  <HelpOutlineIcon className='nav-tright-icon'/>
+                  <h4 className='nav-tright-link'>Customer Support</h4>
               </div>
           </div>
           <div className='nav-bottom'>
               <div className='nav-bottom-left'>
                   <div className='nav-bleft-companyname'>
-                      <h2>Taylor Botique</h2>
+                      <h2>Bushes Boutique</h2>
                   </div>
                   <div className='nav-bleft-clothescategories'>
-                      <h4>Hoodies</h4>
-                      <h4>Jeans</h4>
-                      <h4>Sneakers</h4>
+                      <h4 className='nav-bleft-links'>Hoodies</h4>
+                      <h4 className='nav-bleft-links'>Jeans</h4>
+                      <h4 className='nav-bleft-links'>Sneakers</h4>
                   </div>
               </div>
               <div className='nav-bottom-right'>
                   <div className='nav-bright-search'>
                       <SearchIcon/>
-                      <h2>Search</h2>
+                      <h4 className='nav-bright-searchText'>Search</h4>
                   </div>
-                 <h4></h4>
-                  <FavoriteBorderIcon/>
-                  <ShoppingCartIcon/>
-                  <Avatar src='' alt='' />
+                 <h4 className='nav-bright-link'>|</h4>
+                  <FavoriteBorderIcon className='nav-bright-icons'/>
+                  <ShoppingCartIcon className='nav-bright-icons'/>
+                  <Avatar src='' alt='' className='nav-bright-icons' />
               </div>
           </div>
       </nav>
