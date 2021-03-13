@@ -6,6 +6,7 @@ import {NavigationBar} from "./Components/Home/NavigationBar";
 import {Summer} from "./Components/Products/Summer";
 import {Jackets} from "./Components/Products/Jackets";
 import {Tops} from "./Components/Products/Tops";
+import {ProductDetails} from './Components/Products/ProductDetails';
 import './App.css';
 
 const client = Client.buildClient({
@@ -24,6 +25,10 @@ function App() {
         <Switch>
             <Route exact path='/'>
                 <Home/>
+            </Route>
+            <Route exact path='/product-details/:id'>
+                <NavigationBar/>
+                <ProductDetails/>
             </Route>
             <Route exact path='/products/summer'>
                 <NavigationBar/>
