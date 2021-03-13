@@ -5,3 +5,8 @@
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
+
+.Router__link {
+  text-decoration: none;
+  color: black;
+}

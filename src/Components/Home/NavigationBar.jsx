@@ -5,6 +5,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import {Avatar} from "@material-ui/core";
+import {Link} from 'react-router-dom';
 import '../../Styles/NavigationBar.css';
 
 
@@ -27,9 +28,12 @@ export const NavigationBar = () => {
                       <h2>Bushes Boutique</h2>
                   </div>
                   <div className='nav-bleft-clothescategories'>
-                      <h4 className='nav-bleft-links'>Hoodies</h4>
-                      <h4 className='nav-bleft-links'>Jeans</h4>
-                      <h4 className='nav-bleft-links'>Sneakers</h4>
+                      <Link to='/products/summer' className='Router__link'>
+                          <h4 className='nav-bleft-links'>Summer</h4>
+                      </Link>
+
+                      <h4 className='nav-bleft-links'>Jackets</h4>
+                      <h4 className='nav-bleft-links'>Tops</h4>
                   </div>
               </div>
               <div className='nav-bottom-right'>
