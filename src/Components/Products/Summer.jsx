@@ -31,9 +31,13 @@ export const Summer = () => {
                 {
                     products.map(product=>{
                         return(
-                            <div className='products_details'>
+                            <div className='products_details' key={product.id}>
                                 <div className='products_image'>
-                                    <img src={product.images[0].src}/>
+                                    <img width='200px' src={product.images[0].src}/>
+                                </div>
+                                <div className='products__info'>
+                                    <h4>{product.handle}</h4>
+                                    <h4>{product.variants[0].price}</h4>
                                 </div>
                             </div>
                         )

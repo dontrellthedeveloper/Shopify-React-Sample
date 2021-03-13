@@ -25,15 +25,20 @@ export const NavigationBar = () => {
           <div className='nav-bottom'>
               <div className='nav-bottom-left'>
                   <div className='nav-bleft-companyname'>
-                      <h2>Bushes Boutique</h2>
+                      <Link to='/' className='Router__link'>
+                          <h2 className='nav-bleft-links'>Bushes Boutique</h2>
+                      </Link>
                   </div>
                   <div className='nav-bleft-clothescategories'>
                       <Link to='/products/summer' className='Router__link'>
                           <h4 className='nav-bleft-links'>Summer</h4>
                       </Link>
-
-                      <h4 className='nav-bleft-links'>Jackets</h4>
-                      <h4 className='nav-bleft-links'>Tops</h4>
+                      <Link to='/products/jackets' className='Router__link'>
+                          <h4 className='nav-bleft-links'>Jackets</h4>
+                      </Link>
+                      <Link to='/products/tops' className='Router__link'>
+                          <h4 className='nav-bleft-links'>Tops</h4>
+                      </Link>
                   </div>
               </div>
               <div className='nav-bottom-right'>
