@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Home} from './Components/Home/Home';
 import Client from "shopify-buy";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -14,11 +14,27 @@ const client = Client.buildClient({
   storefrontAccessToken: process.env.REACT_APP_ShopifyApiKey
 });
 
+
+
 // SummerID=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI2MjAxMDgzMTAzNA==
 // JacketID=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI2MjAxMzAyNjQ5MA==
 // TopID=Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzI2MjAxMzEyNDc5NA==
 function App() {
 
+    const user_cart = localStorage.getItem('cart_id') || false;
+
+    useEffect(() => {
+
+        if (user_cart === false) {
+            // Create an empty checkout
+            client.checkout.create().then((checkout) => {
+                // Do something with the checkout
+                console.log(checkout);
+                localStorage.setItem('cart_id', checkout.id)
+            });
+        }
+
+    });
 
   return (
     <Router>

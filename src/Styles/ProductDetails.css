@@ -1,0 +1,33 @@
+.ProductDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem;
+    margin: 5rem;
+}
+
+.ProductDetails-right {
+    box-shadow: 0  12px 28px 0 rgba(0,0,0,.2), 0 2px 4px 0 rgba(0,0,0,.1), inset 0 0 0 1px hsla(0,0%, 100%, .05);
+    padding: 3rem;
+}
+
+.btn {
+    display: block;
+    margin: 0% auto;
+    padding: .4rem 1rem;
+    border-radius: 5px;
+    transition: ease-in-out .4s;
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.ProductDetails-right > h2,
+.ProductDetails-right > h4,
+.ProductDetails-right > select {
+    margin-bottom: 1.3rem;
+}
