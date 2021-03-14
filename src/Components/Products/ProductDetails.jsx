@@ -8,21 +8,28 @@ const client = Client.buildClient({
     storefrontAccessToken: process.env.REACT_APP_ShopifyApiKey
 });
 
-// // Fetch a single product by ID
-// const productId = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=';
-//
-// client.product.fetch(productId).then((product) => {
-//     // Do something with the product
-//     console.log(product);
-// });
 
 export const ProductDetails = () => {
+    const cart_id = localStorage.getItem('cart_id'); // ID of an existing checkout
     const {id} = useParams();
     const [product, setProduct] = useState(null);
     const [qty, setQty] = useState(1);
 
     const AddToCart = () => {
-        alert(qty);
+
+        const lineItemsToAdd = [
+            {
+                variantId: product.variants[0].id,
+                quantity: qty
+            }
+
+        ];
+
+        // Add an item to the checkout
+        client.checkout.addLineItems(cart_id, lineItemsToAdd).then((checkout) => {
+            // Do something with the updated checkout
+            console.log(checkout.lineItems); // Array with one additional line item
+        });
     };
 
     console.log(id);
@@ -67,3 +74,21 @@ export const ProductDetails = () => {
     }
 
 };
+
+
+
+
+// const checkoutId = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0SW1hZ2UvMTgyMTc3ODc1OTI='; // ID of an existing checkout
+// const lineItemsToAdd = [
+//     {
+//         variantId: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8yOTEwNjAyMjc5Mg==',
+//         quantity: 5,
+//         customAttributes: [{key: "MyKey", value: "MyValue"}]
+//     }
+// ];
+//
+// // Add an item to the checkout
+// client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((checkout) => {
+//     // Do something with the updated checkout
+//     console.log(checkout.lineItems); // Array with one additional line item
+// });
